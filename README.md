@@ -1,5 +1,7 @@
 # aitools_database
-Database SQL
+Database SQL Queries
+
+Run the sql queries in file database_query and your database should be setup alright
 
 
 Database includes 4 Tables.
