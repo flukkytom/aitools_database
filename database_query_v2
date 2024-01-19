@@ -59,7 +59,7 @@ CREATE TABLE `submissions` (
   `keywords` varchar(256) DEFAULT NULL,
   `business_email` varchar(56) DEFAULT NULL,
   `business_phone` int(56) DEFAULT NULL,
-  `submission_date` date DEFAULT current_timestamp(),
+  `submission_date` date DEFAULT NULL,,
   `sub_data` varchar(256) DEFAULT NULL,
   `status` int(11) NOT NULL,
   `category` varchar(56) DEFAULT NULL,
