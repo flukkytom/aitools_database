@@ -1,0 +1,125 @@
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_access`
+--
+
+CREATE TABLE `admin_access` (
+  `id` int(11) NOT NULL,
+  `username` varchar(56) NOT NULL,
+  `password` varchar(56) NOT NULL,
+  `login_status` int(3) NOT NULL,
+  `date_added` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member_access`
+--
+
+CREATE TABLE `member_access` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(56) NOT NULL,
+  `lastname` varchar(56) NOT NULL,
+  `country` varchar(27) NOT NULL,
+  `phone` varchar(27) DEFAULT NULL,
+  `email` varchar(56) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `last_login` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `search_data`
+--
+
+CREATE TABLE `search_data` (
+  `id` int(11) NOT NULL,
+  `search_term` varchar(56) NOT NULL,
+  `search_date` date DEFAULT NULL,
+  `search_ip` varchar(56) NOT NULL,
+  `result_ids` varchar(256) NOT NULL,
+  `search_col1` varchar(56) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `submissions`
+--
+
+CREATE TABLE `submissions` (
+  `id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `website` varchar(256) NOT NULL,
+  `description` text NOT NULL,
+  `keywords` varchar(256) DEFAULT NULL,
+  `business_email` varchar(56) DEFAULT NULL,
+  `business_phone` int(56) DEFAULT NULL,
+  `submission_date` date DEFAULT current_timestamp(),
+  `sub_data` varchar(256) DEFAULT NULL,
+  `status` int(11) NOT NULL,
+  `category` varchar(56) DEFAULT NULL,
+  `pricing` varchar(56) DEFAULT NULL,
+  `rating` varchar(11) DEFAULT NULL,
+  `image_url` varchar(256) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin_access`
+--
+ALTER TABLE `admin_access`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `member_access`
+--
+ALTER TABLE `member_access`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `search_data`
+--
+ALTER TABLE `search_data`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `submissions`
+--
+ALTER TABLE `submissions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin_access`
+--
+ALTER TABLE `admin_access`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `member_access`
+--
+ALTER TABLE `member_access`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `search_data`
+--
+ALTER TABLE `search_data`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `submissions`
+--
+ALTER TABLE `submissions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
